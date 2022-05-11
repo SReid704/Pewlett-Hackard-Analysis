@@ -1,4 +1,5 @@
 -- Creating tables for PH-EmployeeDB
+-- Creating tables for PH-EmployeeDB
 CREATE TABLE departments (
      dept_no VARCHAR(4) NOT NULL,
      dept_name VARCHAR(40) NOT NULL,
@@ -27,28 +28,31 @@ FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
 );
 
 CREATE TABLE salaries (
-  emp_no INT NOT NULL,
-  salary INT NOT NULL,
-  from_date DATE NOT NULL,
-  to_date DATE NOT NULL,
-  FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
-  PRIMARY KEY (emp_no)
+    emp_no INT NOT NULL,
+    salary INT NOT NULL,
+    from_date DATE NOT NULL,
+    to_date DATE NOT NULL,
+    FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
+    PRIMARY KEY (emp_no, from_date)
 );
 
 CREATE TABLE dept_emp (
-     dept_no VARCHAR(4) NOT NULL,
-     emp_no VARCHAR(40) NOT NULL,
-	 to_date Date NOT NULL,
-	FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
+    emp_no INT NOT NULL,
+    dept_no VARCHAR(4) NOT NULL,
+    from_date DATE NOT NULL,
+    to_date DATE NOT NULL,
+    FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
+    FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
     PRIMARY KEY (emp_no, dept_no)
 );
 
 CREATE TABLE titles (
-     emp_no VARCHAR(40) NOT NULL,
-	 title VARCHAR(40) NOT NULL,
-	 from_date Date NOT NULL,
-	 to_date Date NOT NULL,
-    PRIMARY KEY (emp_no)
+    emp_no INT NOT NULL,
+    title VARCHAR(50) NOT NULL,
+    from_date DATE NOT NULL,
+    to_date DATE,
+    FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
+    PRIMARY KEY (emp_no, title, from_date)
 );
 
 SELECT * FROM departments;
