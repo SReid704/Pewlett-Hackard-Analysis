@@ -15,6 +15,7 @@ We have removed duplicates and grouped by titles. There are 72,458 retiring empl
 ![Screen Shot 2022-05-12 at 8 48 51 PM](https://user-images.githubusercontent.com/101374716/168189862-e976a5ab-787f-4ada-8bdc-94475aef69ed.png)
 
 Here is the Titles and count of employees who are coming up on retirement. This will help Pewlett-Hackard determine what department they would need to hire for and how many new employees are needed. 
+
 ![Retiring_titles table](https://user-images.githubusercontent.com/101374716/168189795-01993663-bc1e-448e-99aa-f22b388b4656.png)
 
 ### Deliverable 2: Mentorship Eligibility
